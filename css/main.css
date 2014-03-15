@@ -1,0 +1,101 @@
+.ui-icon-qr {
+  background: url(../img/icon/icon-qr.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+.ui-icon-location {
+  background: url(../img/icon/icon-location.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-event {
+  background: url(../img/icon/icon-event.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-plant {
+  background: url(../img/icon/icon-plant.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-find {
+  background: url(../img/icon/icon-find.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-achievement {
+  background: url(../img/icon/icon-achievement.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-share{
+  background: url(../img/icon/icon-share.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-gallery {
+  background: url(../img/icon/icon-gallery.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.ui-icon-pointMe{
+  background: url(../img/icon/icon-point.png) 50% 50% no-repeat;
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+ 
+}
+
+.gambar{
+	border:5px solid;
+	border-color:#050;
+	border-radius:5px;
+	margin:5px;
+}
+
+div.gallery-row:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+div.gallery-item { float: left; width: 33.333333%; }
+div.gallery-item a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
+div.gallery-item img { display: block; width: 100%; height: auto; }
+#Gallery1 .ui-content { overflow: hidden; }

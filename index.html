@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="jquery-mobile/jquery.mobile.structure-1.0.min.css"/>
+<link rel="stylesheet" href="jquery-mobile/jquery.mobile.theme-1.0.min.css"/>
+<link href="css/photoswipe.css" type="text/css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="js/simple-inheritance.min.js" type="text/javascript"></script>
+<script src="js/code-photoswipe-jQuery-1.0.11.min.js" type="text/javascript"></script>
+
+
+<title>Barcode Scanner Demo</title>
+</head>
+<body>
+<!--halaman utama-->
+<div data-role="page" id="page-index">
+  <table width="100%" height="200" style="background-color:#4D9E41; color:#EEE" >
+    
+      <td width="134"><img src="img/logo-utama.jpg" width="134" height="200"  alt=""/></td>
+      <td><h2>Taman Surabaya</h2>
+        <br/>
+        <table>
+          
+            <td><img src="img/logo-surabaya.png" width="50" height="60"/></td>
+            <td>Dinas Kebersihan dan Pertamanan Surabaya</td>
+        </table></td>
+  </table>
+  <div data-role="header">
+    <h2>Jelajah Taman Kota</h2>
+  </div>
+  <div data-role="content">
+    <table width="100%">
+      
+        <td><a href="#" data-role="button" data-icon="qr" data-id="btn-scan" >Scan QR</a></td>
+        <td><a href="#" data-role="button" data-icon="location" data-id="btn-map" >Lokasi</a></td>
+    </table>
+    <div data-role="controlgroup" data-iconpos="left"> <a href="#" data-role="button" data-icon="event" data-id="btn-event">Jadwal Event</a> <a href="#page-taman" data-role="button" data-icon="plant" data-id="btn-profilTaman">Profil Taman</a> <a href="#" data-role="button" data-icon="find" data-id="btn-cari">Cari</a> <a href="geo:0,0?q=-7.263918,112.782861" data-role="button" data-icon="achievement" data-id="btn-penghargaan">Penghargaan</a> </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h1>copyright &copy; yolo.co.id 2014</h1>
+  </div>
+</div>
+<!--halaman cari taman-->
+<div data-role="page" id="page-cari">
+  <div data-role="header">
+    <table width="100%">
+      
+        <td align="center"><a href="#" data-role="button" data-theme="a">Filter</a></td>
+        <td><input name="search" type="search" value="" id="txt-cariTaman" data-id="txt-cari" data-theme="c"/></td>
+        <td align="center"><a href="#" data-role="button">Map</a></td>
+    </table>
+  </div>
+  <div data-role="content">
+    <table width="100%" id="list-cari" style="background-color:#EEE;">
+    	
+    </table>
+    
+  </div>
+  <div data-role="footer" data-position="fixed">
+    
+    <h1>copyright &copy; yolo.co.id 2014</h1>
+  </div>
+</div>
+
+<!--halaman map -->
+<div data-role="page" id="page-map">
+  <div data-role="header">
+    <table width="100%">
+      
+        <td align="center"><img src="img/logo-surabaya.png" width="30" height="40"/></td>
+        <td align="center"><a href="#" data-role="button" data-theme="a">Filter</a></td>
+        <td><input name="search" type="search" value=""  data-id="txt-cari" data-theme="c"/></td>
+        <td align="center"><a href="#" data-role="button">Map</a></td>
+    </table>
+  </div>
+  <div data-role="content" id="content-map" style="height:100%; width:100%;"> </div>
+  <div data-role="footer" data-position="fixed">
+    <h1>copyright &copy; yolo.co.id 2014</h1>
+  </div>
+</div>
+
+<!--halaman detail tanaman-->
+<div data-role="page" id="page-tanaman">
+  <div data-role="header">
+    <table width="100%">
+        <td align="center" width="50"><img src="img/logo-surabaya.png" width="30" height="40"/></td>
+        <td align="center"><h1 id="txt-namaTanaman">Pohon pisang</h1></td>
+    </table>
+  </div>
+  <div data-role="content" >
+  	<table width="100%" style="margin-bottom:10px;">
+    	<td width="150" >
+        	<img src="" width="150" class="gambar" id="gambarTanaman"/>
+        </td>
+        <td>
+        	<table width="100%" style="padding-left:20px; padding-right:20px; background-color:#EEE;" id="detailTanaman">
+            	<tr style="background-color:#3F3">
+                	<td colspan = "2"><center><b>Klasifikasi Ilmiah</b></center></td>
+                </tr>
+            	<tr><td>kerajaan</td><td></td></tr>
+                <tr><td>filum</td><td></td></tr>
+                <tr><td>kelas</td><td></td></tr>
+                <tr><td>ordo</td><td></td></tr>
+                <tr><td>famili</td><td></td></tr>
+                <tr><td>genus</td><td></td></tr>
+                <tr><td>spesies</td><td></td></tr>
+                <tr style="background-color:#3F3">
+                	<td colspan="2"><center><b> Nama Binomial</b></center></td>
+                </tr>
+                <tr>
+                	<td colspan="2"><center></center></td>
+                </tr>
+            </table>
+        </td>
+    </table>
+    <table width="100%" style="margin-bottom:10px">
+    <td><a href="#" data-role="button" data-icon="gallery" data-id="galleryTanaman" rel="">Gallery</a></td>
+    <td><a href="#" data-role="button" data-icon="share" data-id="shareTanaman">Share</a></td>
+    </table>
+    <div style="background-color:#EEE; padding:10px; padding-top:0px;">
+    <h1><b>Deskripsi:</b></h1>
+    <p id="txt-desTanaman">
+    
+    </p>
+    </div>
+       
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h1>copyright &copy; yolo.co.id 2014</h1>
+  </div>
+</div>
+
+<!--halaman detail taman-->
+<div data-role="page" id="page-taman">
+  <div data-role="header">
+    <table width="100%">
+        <td align="center" width="50"><img src="img/logo-surabaya.png" width="30" height="40"/></td>
+        <td align="center"><h1 id="txt-namaTaman">Taman Bungkul</h1></td>
+    </table>
+  </div>
+  <div data-role="content" >
+  	<table width="100%" style="margin-bottom:10px;">
+    	<td width="150" ><img src="" width="150" class="gambar" id="gambarTaman"/></td>
+        <td>
+        	<table width="100%" style="padding-left:20px; padding-right:20px; background-color:#EEE;" id="detailTaman" frame="box" >
+            	<tr style="background-color:#3F3">
+                	<td colspan = "2"><center><b>Informasi</b></center></td>
+                </tr>
+            	<tr><td>Map</td><td></td></tr>
+                <tr><td><img src="img/icon/icon-phone.png" width="25" height="25"/></td><td></td></tr>
+                <tr>
+                	<td><img src="img/icon/icon-point.png" width="25" height="25"/></td>
+                    <td><a href="#">Point Me There</a></td>
+                </tr>
+            </table>
+        </td>
+    </table>
+    <table width="100%" style="margin-bottom:10px">
+    <td><a href="#" data-role="button" data-icon="gallery" data-id="galleryTaman" rel="">Gallery</a></td>
+    <td><a href="#" data-role="button" data-icon="share" data-id="shareTaman">Share</a></td>
+    </table>
+    <div style="background-color:#EEE; padding:10px; padding-top:0px;">
+    <h1><b>Deskripsi:</b></h1>
+    <p id="txt-desTaman">
+    
+    </p>
+    </div>
+       
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h1>copyright &copy; yolo.co.id 2014</h1>
+  </div>
+</div>
+
+<!--halaman gallery-->
+<div data-role="page" id="page-gallery" class="gallery-page">
+  <div data-role="header">
+    <table width="100%">
+        <td align="center" width="50"><img src="img/logo-surabaya.png" width="30" height="40"/></td>
+        <td align="center"><h1 id="txt-namaGalery">Taman Bungkul</h1></td>
+    </table>
+  </div>
+  <div data-role="content">
+  	<div class="gallery" >
+        <div class="gallery-row" id="content-gallery">
+        </div>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h1>copyright &copy; yolo.co.id 2014</h1>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="barcodescanner.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=true" ></script>
+<script type="text/javascript" src="js/localstorage-adapter.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+
+
+</body>
+</html>
